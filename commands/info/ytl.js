@@ -28,16 +28,7 @@ module.exports = {
       const embed = new RichEmbed()
         .setAuthor(message.author.username, message.author.avatarURL)
         .setDescription(text);
-      const m = await message.channel.send(embed)
-        .catch(error => {
-          console.error(error);
-          return reply(message, 'Something Went Wrong');
-        });
-      return m.delete(120000)
-        .catch(error => {
-          console.error(error);
-          return reply(message, 'Something Went Wrong');
-        });
+      return message.channel.send(embed);
     }
     return reply(message, 'Something Went Wrong');
   },

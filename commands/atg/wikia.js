@@ -33,16 +33,7 @@ module.exports = {
           .setURL(items[0].url)
           .setTitle(items[0].title)
           .setDescription(`${$.text().trim()}...`);
-        const m = await message.channel.send(embed)
-          .catch(error => {
-            console.error(error);
-            return reply(message, 'Something Went Wrong');
-          });
-        return m.delete(240000)
-          .catch(error => {
-            console.error(error);
-            return reply(message, 'Something Went Wrong');
-          });
+        return message.channel.send(embed);
       }
       return reply(message, 'Not Found');
     }

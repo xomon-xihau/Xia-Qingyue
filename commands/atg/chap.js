@@ -49,16 +49,7 @@ module.exports = {
       }
       time = `${time} ${yt}`;
       const send = `Chapter Number: ${num}\nChapter Name: ${name}\nReleased: ${time}`;
-      const m = await message.channel.send(qt(send.trim()))
-        .catch(error => {
-          console.error(error);
-          return reply(message, 'Something Went Wrong');
-        });
-      return m.delete(120000)
-        .catch(error => {
-          console.error(error);
-          return reply(message, 'Something Went Wrong');
-        });
+      return message.channel.send(qt(send.trim()));
     }
     return reply(message, 'Something Went Wrong');
   },

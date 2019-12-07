@@ -1,6 +1,5 @@
 'use strict';
 const { RichEmbed } = require('discord.js');
-const { reply } = require('../../functions.js');
 
 const myArray = ['Yes', 'No'];
 
@@ -14,7 +13,7 @@ module.exports = {
   cooldown: 60,
   description: 'Answer randomly in Yes or No',
   usage: '[question]',
-  run: async (client, message, args) => {
+  run: (client, message, args) => {
     // Get question
     let qs = args.join(' ').replace(/<.*>/, '');
     // Captalize first letter of question
@@ -31,16 +30,6 @@ module.exports = {
     const embed = new RichEmbed()
       .setAuthor(qs, message.author.avatarURL)
       .setFooter(ans, client.user.displayAvatarURL);
-    const m = await message.channel.send(embed)
-      .catch(error => {
-        console.error(error);
-        return reply(message, 'Something Went Wrong');
-      });
-    // Delete message
-    return m.delete(90000)
-      .catch(error => {
-        console.error(error);
-        return reply(message, 'Something Went Wrong');
-      });
+    return message.channel.send(embed);
   },
 };

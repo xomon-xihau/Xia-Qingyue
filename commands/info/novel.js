@@ -48,19 +48,7 @@ module.exports = {
         .setThumbnail(img)
         .setDescription(shorten(text))
         .setFooter(footer);
-      if (message.channel.id === '479849680268820480') {
-        return message.channel.send(embed);
-      }
-      const m = await message.channel.send(embed)
-        .catch(error => {
-          console.error(error);
-          return reply(message, 'Something Went Wrong');
-        });
-      return m.delete(240000)
-        .catch(error => {
-          console.error(error);
-          return reply(message, 'Something Went Wrong');
-        });
+      return message.channel.send(embed);
     }
     return reply(message, 'Not Found');
   },

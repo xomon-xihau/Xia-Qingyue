@@ -47,27 +47,9 @@ module.exports = {
             const embed = new RichEmbed()
               .setImage(url);
             embed.setDescription(`${message.author.username} ${pics[args[0]]} ${args[1]}`);
-            const m = await message.channel.send(embed)
-              .catch(error => {
-                console.error(error);
-                return reply(message, 'Something Went Wrong');
-              });
-            return m.delete(240000)
-              .catch(error => {
-                console.error(error);
-                return reply(message, 'Something Went Wrong');
-              });
+            return message.channel.send(embed);
           }
-          const m = await message.channel.send({ files: [url] })
-            .catch(error => {
-              console.error(error);
-              return reply(message, 'Something Went Wrong');
-            });
-          return m.delete(240000)
-            .catch(error => {
-              console.error(error);
-              return reply(message, 'Something Went Wrong');
-            });
+          return message.channel.send({ files: [url] });
         }
       }
       return reply(message, 'Something Went Wrong');

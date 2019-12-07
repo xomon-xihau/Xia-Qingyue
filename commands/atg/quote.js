@@ -83,16 +83,7 @@ module.exports = {
             });
 
             const result = quotes[Math.floor(Math.random() * quotes.length)];
-            const m = await message.channel.send(`${qt(result.quote)} ${result.by} (${result.chap})`)
-              .catch(error => {
-                console.error(error);
-                return reply(message, 'Something Went Wrong');
-              });
-            return m.delete(240000)
-              .catch(error => {
-                console.error(error);
-                return reply(message, 'Something Went Wrong');
-              });
+            return message.channel.send(`${qt(result.quote)} ${result.by} (${result.chap})`);
           }
           return reply(message, 'Not Found');
         }

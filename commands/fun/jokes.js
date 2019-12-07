@@ -34,16 +34,7 @@ module.exports = {
           return reply(message, 'Something Went Wrong');
         });
       if (value !== undefined) {
-        const m = await message.channel.send(qt(value.joke.replace(/&quot;/g, '"')))
-          .catch(error => {
-            console.error(error);
-            return reply(message, 'Something Went Wrong');
-          });
-        return m.delete(240000)
-          .catch(error => {
-            console.error(error);
-            return reply(message, 'Something Went Wrong');
-          });
+        return message.channel.send(qt(value.joke.replace(/&quot;/g, '"')));
       }
     }
     return reply(message, 'Something Went Wrong');

@@ -1,5 +1,4 @@
 'use strict';
-const { reply } = require('../../functions.js');
 
 const myArray = [
   'Pathetic worm, you dare try to talk to this King....',
@@ -31,18 +30,9 @@ module.exports = {
   description: 'Insult a user',
   usage: '[name | ping]',
   args: true,
-  run: async (_, message, args) => {
+  run: (_, message, args) => {
     const randomItem = myArray[Math.floor(Math.random() * myArray.length)];
     const name = args.join(' ');
-    const m = await message.channel.send(`\`To ${name}:\` ${randomItem}`)
-      .catch(error => {
-        console.error(error);
-        return reply(message, 'Something Went Wrong');
-      });
-    m.delete(120000)
-      .catch(error => {
-        console.error(error);
-        return reply(message, 'Something Went Wrong');
-      });
+    return message.channel.send(`\`To ${name}:\` ${randomItem}`);
   },
 };

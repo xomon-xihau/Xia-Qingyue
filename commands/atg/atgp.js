@@ -25,16 +25,7 @@ module.exports = {
       if (!randomItem) {
         randomItem = myArray[Math.floor(Math.random() * myArray.length)];
       }
-      const m = await message.channel.send({ files: [randomItem] })
-        .catch(error => {
-          console.error(error);
-          return reply(message, 'Something Went Wrong');
-        });
-      return m.delete(240000)
-        .catch(error => {
-          console.error(error);
-          return reply(message, 'Something Went Wrong');
-        });
+      return message.channel.send({ files: [randomItem] });
     }
     const field = {
       'Available arguments': Object.keys(data).join('・'),

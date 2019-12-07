@@ -33,13 +33,13 @@ client.on('ready', () => {
   console.log(`Hi, ${client.user.username} is now online!`);
 
   // Set the user presence
-  client.user.setPresence({
-    status: 'dnd',
-    game: {
-      name: 'What ppl write.',
-      type: 'WATCHING',
-    },
-  });
+  // client.user.setPresence({
+  //   status: 'dnd',
+  //   game: {
+  //     name: 'What ppl write.',
+  //     type: 'WATCHING',
+  //   },
+  // });
 });
 
 // IDs of the guild in which bot command will work
@@ -62,7 +62,7 @@ client.on('message', async message => {
 
   // If message.member is uncached, cache it.
   // eslint-disable-next-line require-atomic-updates
-  if (!message.member) message.member = await message.guild.fetchMember(message);
+  // if (!message.member) message.member = await message.guild.fetchMember(message);
 
   // Arguments and command variable
   // cmd is the first word in the message, aka the command
