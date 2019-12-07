@@ -1,0 +1,35 @@
+{
+  "name": "xiaqingyue",
+  "version": "1.0.0",
+  "description": "a discord bot",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.0",
+    "npm": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xomon-xihau/Xia-Qingyue.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "Xomon Xihau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xomon-xihau/Xia-Qingyue/issues"
+  },
+  "homepage": "https://github.com/xomon-xihau/Xia-Qingyue#readme",
+  "dependencies": {
+    "ascii-table": "0.0.9",
+    "cheerio": "^1.0.0-rc.3",
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0"
+  }
+}
