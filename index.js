@@ -80,12 +80,6 @@ client.on('message', async message => {
   // If none is found, try to find it by alias
   if (!command) { command = client.commands.get(client.aliases.get(cmd)); }
 
-  // Tell the user in which channel the command will work
-  if (command.ch && !command.ch.includes(message.channel.id)) {
-    reply(message, `This command works only in <#${command.ch.join('>, <#')}>`);
-    return;
-  }
-
   // Tell the user to provide argument for those cmd that needed it
   if (command.args && !args.length) {
     reply(message, 'You didn\'t provide any arguments');
