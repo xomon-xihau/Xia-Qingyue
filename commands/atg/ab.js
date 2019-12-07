@@ -31,16 +31,7 @@ module.exports = {
         return true;
       });
       if (val) {
-        const m = await message.channel.send(val)
-          .catch(error => {
-            console.error(error);
-            return reply(message, 'Something Went Wrong');
-          });
-        return m.delete(240000)
-          .catch(error => {
-            console.error(error);
-            return reply(message, 'Something Went Wrong');
-          });
+        return message.channel.send(val);
       }
       return reply(message, 'Not Found');
     }

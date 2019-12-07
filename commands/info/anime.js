@@ -11,7 +11,6 @@ module.exports = {
   aliases: ['kitsu'],
   cooldown: 30,
   args: true,
-  ch: ['562804349831741481'],
   category: 'info',
   description: 'Get Anime Info',
   run: async (_, message, args) => {
@@ -34,6 +33,9 @@ module.exports = {
           .setThumbnail(anime.posterImage.original.replace(/\?.*/, ''))
           .setDescription(shorten(anime.synopsis))
           .setFooter(footer);
+        if (message.channel.id === '562804349831741481') {
+          return message.channel.send(embed);
+        }
         const m = await message.channel.send(embed)
           .catch(error => {
             console.error(error);

@@ -10,7 +10,6 @@ module.exports = {
   name: 'manga',
   cooldown: 30,
   args: true,
-  ch: ['487823341613481985', '599016627970768896'],
   category: 'info',
   description: 'Get Manga Info',
   run: async (_, message, args) => {
@@ -32,6 +31,9 @@ module.exports = {
           .setThumbnail(manga.posterImage.original.replace(/\?.*/, ''))
           .setDescription(shorten(manga.synopsis))
           .setFooter(footer);
+        if (message.channel.id === '487823341613481985') {
+          return message.channel.send(embed);
+        }
         const m = await message.channel.send(embed)
           .catch(error => {
             console.error(error);

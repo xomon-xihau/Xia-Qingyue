@@ -21,6 +21,9 @@ module.exports = {
       const embed = new RichEmbed()
         .setTitle('Cat Facts')
         .setDescription(fact);
+      if (message.channel.id === '581962707704741918') {
+        return message.channel.send(embed);
+      }
       const m = await message.channel.send(embed)
         .catch(error => {
           console.error(error);

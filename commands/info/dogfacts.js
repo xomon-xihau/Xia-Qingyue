@@ -8,7 +8,6 @@ module.exports = {
   description: 'Dog\'s Fact',
   cooldown: 30,
   args: false,
-  ch: ['581962707704741918'],
   category: 'info',
   run: async (_, message) => {
     const res = await fetch('https://dog-api.kinduff.com/api/facts').catch(error => {
@@ -21,6 +20,9 @@ module.exports = {
       const embed = new RichEmbed()
         .setTitle('Dog Facts')
         .setDescription(facts[0]);
+      if (message.channel.id === '581962707704741918') {
+        return message.channel.send(embed);
+      }
       const m = await message.channel.send(embed)
         .catch(error => {
           console.error(error);

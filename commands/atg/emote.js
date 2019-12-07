@@ -17,16 +17,7 @@ module.exports = {
 
     data = JSON.parse(data);
     if (typeof data[args[0]] !== 'undefined') {
-      const m = await message.channel.send({ files: [data[args[0]]] })
-        .catch(error => {
-          console.error(error);
-          return reply(message, 'Something Went Wrong');
-        });
-      return m.delete(240000)
-        .catch(error => {
-          console.error(error);
-          return reply(message, 'Something Went Wrong');
-        });
+      return message.channel.send({ files: [data[args[0]]] });
     }
     const field = {
       'Available arguments': Object.keys(data).join('・'),

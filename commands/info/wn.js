@@ -20,7 +20,6 @@ module.exports = {
   name: 'wn',
   cooldown: 30,
   args: true,
-  ch: ['479849680268820480'],
   category: 'info',
   description: 'Get Novel Info',
   run: async (_, message, args) => {
@@ -50,6 +49,9 @@ module.exports = {
         .setURL(`http:${link}`)
         .setThumbnail(`http:${img.replace(/\?.*/, '')}`)
         .setDescription(shorten(text));
+      if (message.channel.id === '479849680268820480') {
+        return message.channel.send(embed);
+      }
       const m = await message.channel.send(embed)
         .catch(error => {
           console.error(error);

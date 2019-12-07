@@ -17,7 +17,6 @@ module.exports = {
   aliases: ['movie'],
   cooldown: 30,
   args: true,
-  ch: ['564972484152262656'],
   category: 'info',
   description: 'Get Movie Info',
   run: async (_, message, args) => {
@@ -39,6 +38,9 @@ module.exports = {
           .setFooter(footer);
         if (data.Poster !== 'N/A') {
           embed.setThumbnail(data.Poster);
+        }
+        if (message.channel.id === '564972484152262656') {
+          return message.channel.send(embed);
         }
         const m = await message.channel.send(embed)
           .catch(error => {
