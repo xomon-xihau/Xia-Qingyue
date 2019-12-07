@@ -10,7 +10,7 @@ module.exports = {
   aliases: ['nu'],
   cooldown: 30,
   args: true,
-  ch: ['479849680268820480'],
+  // ch: ['479849680268820480'],
   category: 'info',
   description: 'Get Novel Info',
   run: async (_, message, args) => {
