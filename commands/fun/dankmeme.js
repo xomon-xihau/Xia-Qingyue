@@ -10,6 +10,9 @@ module.exports = {
   description: 'Get Random Meme from /r/dank_meme',
   usage: 'dankmeme',
   run: async (_, message) => {
+    if(message.channel.id === '564559476510949386') {
+      return reply(`This command can be use only in <#${message.channel.id}`);
+    }
     const res = await fetch('https://www.reddit.com/r/dank_meme.json')
       .catch(error => {
         console.error(error);
