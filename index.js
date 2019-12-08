@@ -86,6 +86,11 @@ client.on('message', async message => {
     return;
   }
 
+  if (command.ch && !command.ch.includes(message.channel.id)) {
+    // eslint-disable-next-line consistent-return
+    return reply(message, `This command works only in <#${command.ch.join('>, <#')}>`);
+  }
+
   if (!cooldowns.has(command.name)) {
     cooldowns.set(command.name, new Collection());
   }
