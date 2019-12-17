@@ -6,7 +6,7 @@ module.exports = {
   name: 'dankmeme',
   args: false,
   category: 'fun',
-  cooldown: 60,
+  cooldown: 15,
   ch: ['564559476510949386'],
   description: 'Get Random Meme from /r/dank_meme',
   usage: 'dankmeme',
