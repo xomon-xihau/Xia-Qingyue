@@ -70,8 +70,9 @@ client.on('message', async message => {
   // !say hello I am a bot
   // cmd == say (because the prefix is sliced off)
   // args == ["hello", "I", "am", "a", "bot"]
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const cmd = args.shift().toLowerCase();
+  const content = message.content.toLowerCase();
+  const args = content.slice(prefix.length).trim().split(/ +/g);
+  const cmd = args.shift();
 
   if (cmd.length === 0) return;
 
