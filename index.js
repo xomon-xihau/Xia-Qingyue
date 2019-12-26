@@ -51,6 +51,7 @@ const guildID = [
 // When a message comes in, what's in these brackets will be executed
 // eslint-disable-next-line require-await
 client.on('message', async message => {
+  if(message.channel.id === '442546874793328642') return;
   // If the author's a bot, return
   // If the message was not sent in a server, return
   // If the message was from server in which you don't want bot command to work, return
