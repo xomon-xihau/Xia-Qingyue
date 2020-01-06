@@ -15,6 +15,7 @@ module.exports = {
   args: false,
   cooldown: 30,
   category: 'atg',
+  ch: ['566710843232878610'],
   description: 'Get latest chap title',
   run: async (_, message) => {
     let res = await fetch('http://book.zongheng.com/book/408586.html')
