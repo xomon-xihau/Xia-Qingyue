@@ -46,6 +46,7 @@ client.on('ready', () => {
 const guildID = [
   '442546874793328640',
   '641317493474066452',
+  '667364796064202788'
 ];
 
 // When a message comes in, what's in these brackets will be executed
@@ -142,3 +143,7 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 
 // Login the bot
 client.login(process.env.TOKEN);
+
+client.on('error', e => console.error(e));
+client.on('warn', e => console.warn(e));
+client.on('debug', e => console.info(e));
