@@ -11,14 +11,13 @@ Step 3: Pull the code
 git clone https://github.com/xomon-xihau/Xia-Qingyue
 ```
 
-Step 4: Create a .env file in the json_files folder
+Step 4: Create a .env file
 
 Step 5: Add these lines in .env file
 
 ```
 PREFIX=--
 TOKEN=YOUR-BOT-TOKEN
-OMDB=YOUR-OMDB-API-KEY
 YANDEX=YOUR-YANDEX-API-KEY
 ```
 
