@@ -7,7 +7,7 @@ module.exports = {
   cooldown: 5,
   args: true,
   run: async (_, message, args) => {
-    const perm = ['641307666089639947', '443823999529779201'];
+    const perm = ['667363743021268992'];
     if (!perm.includes(message.author.id)) return;
     const m = await message.channel.fetchMessage(args[0])
       .catch(error => {
